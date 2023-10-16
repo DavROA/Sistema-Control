@@ -1,3 +1,10 @@
+<?php
+    @session_start();
+    if(empty($_SESSION['name'])){
+       header('Location: ../index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -360,7 +367,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
+                  <a class="dropdown-item preview-item"  href="controlador/logout.php">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-logout text-danger"></i>
