@@ -30,6 +30,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
+
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -39,9 +40,66 @@
 body, html {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
-  background-color: #666666;
+  /* background-color: #666666; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  
 }
 
+.modo-dia {
+  background-color: #ffffff; /* Fondo blanco para el Modo Día */
+  color: #000000; /* Texto negro para el Modo Día */
+}
+
+.modo-noche {
+  background-color: #000000; /* Fondo negro para el Modo Noche */
+  color: #ffffff; /* Texto blanco para el Modo Noche */
+}
+
+/* Estilo personalizado para el interruptor con un ícono de Font Awesome */
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+.custom-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.custom-switch .slider::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f186"; /* Icono de luna para Modo Noche */
+  position: absolute;
+  left: 4px;
+  top: 2px;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked + .custom-switch .slider {
+  background-color: #000;
+}
+
+input[type="checkbox"]:checked + .custom-switch .slider::before {
+  content: "\f185"; /* Icono de sol para Modo Día */
+  left: 16px;
+}
 /*---------------------------------------------*/
 a {
 	font-family: Poppins-Regular;
