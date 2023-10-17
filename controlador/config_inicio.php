@@ -1,5 +1,5 @@
 <?php
     function login(){
-        header("Location:../SistemaControl/login.php");
+        header("Location:../Sistema-Control/login.php");
     }
 ?>
